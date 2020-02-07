@@ -1,8 +1,9 @@
 pipeline {
   agent {
     docker {
-      args '-v maven-repo:/root/.m2'
       image 'maven'
+      args '''-v maven-repo:/root/.m2
+-v /var/run/docker.sock:/var/run/docker.sock '''
     }
 
   }
