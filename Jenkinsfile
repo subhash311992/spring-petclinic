@@ -16,7 +16,7 @@ pipeline {
 
     stage('build') {
       steps {
-        sh 'mvn clean package'
+        emailext(subject: 'india', body: 'mybody')
       }
     }
 
