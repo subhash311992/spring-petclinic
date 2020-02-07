@@ -9,8 +9,19 @@ pipeline {
   }
   stages {
     stage('clone') {
-      steps {
-        git 'https://github.com/subhash311992/spring-petclinic.git'
+      parallel {
+        stage('clone') {
+          steps {
+            git 'https://github.com/subhash311992/spring-petclinic.git'
+          }
+        }
+
+        stage('') {
+          steps {
+            echo 'india'
+          }
+        }
+
       }
     }
 
